@@ -2,9 +2,9 @@
 
 This is a program that uses the Mel-frequency cepstral coefficients of a recording sample and determines wether the sample was a cello, clarinet, flute, sax, or viola.
 
-## Installation
+## Installation (Intellij)
 
-Import the modules GUI and NearestNeighbor(Algorithims) into Intellij, set NearestNeighbor(Algorithims) as a dependecy for GUI, and run Program.java located in GUI.
+Import the modules GUI and Algorithims into Intellij, set NearestNeighbor(Algorithims) as a dependecy for GUI, and run Program.java located in GUI.
 
 
 ## Usage
