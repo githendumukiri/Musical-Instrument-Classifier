@@ -10,4 +10,3 @@ Import the modules GUI and NearestNeighbor(Algorithims) into Intellij, set Neare
 ## Usage
 
 Identify a cello, clarinet, flute, sax, or viola from a sound sample.
-
