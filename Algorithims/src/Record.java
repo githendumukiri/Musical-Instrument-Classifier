@@ -11,14 +11,19 @@ import java.util.Arrays;
  * This class is responsible for acquiring the attributes of a unknown sample using the microphone.
  *
  * @author Githendu Mukiri
- * @version 1.0 2019-05-16
+ * @version 1.1 2019-07-11
  *
  */
 
 public class Record {
 
 
-   private File audioFile = new File("recording.wav");
+    private File audioFile;
+
+    public Record() {
+
+        audioFile = new File("recording.wav");
+    }
 
     public Sample getSample(){
 
@@ -48,7 +53,7 @@ public class Record {
             System.out.println("Starting recording");
             targetLine.start();
 
-            Thread thread = new Thread(() -> {    //Anonymous gets mic input and writes to file
+            Thread thread = new Thread(() -> {    //anonymous gets mic input and writes to file
 
                 AudioInputStream audioInputStream = new AudioInputStream(targetLine);
                 try {
@@ -73,7 +78,7 @@ public class Record {
         }
 
 
-        //Calculate mfcc for test data
+        //calculate mfcc for test data
 
 
         AudioDispatcher dispatcher = null;  //syntax to import wav
@@ -105,7 +110,6 @@ public class Record {
         dispatcher.run();
 
         float[] query = Arrays.copyOfRange(testMfcc.getMFCC(),1,testMfcc.getMFCC().length); //omit 0 column
-        //System.out.println(Arrays.toString(query));
 
         return new Sample(query);
     }

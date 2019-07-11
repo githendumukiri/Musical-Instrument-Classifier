@@ -15,13 +15,18 @@ import java.util.*;
  * K-Nearest Neighbors of a given an unknown sample from known samples.
  *
  * @author Githendu Mukiri
- * @version 1.0 2019-05-16
+ * @version 1.1 2019-07-11
  */
 
 public class KNN implements Classifier {
 
-    private List<Instrument> instrumentList = new ArrayList<>();
-    private List<Result> resultList = new ArrayList<>();
+    private List<Instrument> instrumentList;
+    private List<Result> resultList;
+
+    public KNN() {
+        instrumentList = new ArrayList<>();
+        resultList = new ArrayList<>();
+    }
 
     /**
      * @param trainData file that contains wav files

@@ -30,26 +30,37 @@ import java.util.*;
  *
  *
  * @author Githendu Mukiri
- * @version 1.0 2019-05-16
+ * @version 1.1 2019-07-11
  *
  */
 public class MLP implements Classifier {
 
-    private List<Instrument> instrumentList = new ArrayList<>();
+    private List<Instrument> instrumentList;
 
-    private int seed = 123;  //randomness
-
-    private double learningRate = 0.01;
-    private int batchSize = 100;    //size of how much data is taken in
-    private int nEpochs = 30;       //total passes through data
-    private int numInputs = 15;
-    private int numOutputs = 5;
-    private int numHiddenNodes = 30;
+    private int seed;  //randomness
+    private double learningRate;
+    private int batchSize;    //size of how much data is taken in
+    private int nEpochs;       //total passes through data
+    private int numInputs;
+    private int numOutputs;
+    private int numHiddenNodes;
 
     private INDArray featureVectors;
     private INDArray labels;
+    private DataSet trainDataSet;
 
-    private DataSet trainDataSet = new DataSet();
+    public MLP() {
+
+        instrumentList = new ArrayList<>();
+        seed = 123;
+        learningRate = 0.01;
+        batchSize = 100;
+        nEpochs = 30;
+        numInputs = 15;
+        numOutputs = 5;
+        numHiddenNodes = 30;
+        trainDataSet = new DataSet();
+    }
 
     /**
      *
